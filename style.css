@@ -60,3 +60,62 @@
   margin: 0;
   font-size: 2rem;
 }
+
+.news__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.news-card {
+  padding: 28px;
+  background: #fff;
+  border-top: 4px solid #b21f24;
+  overflow: hidden; /* 画像がカードからはみ出さないようにする */
+}
+
+.news-card__meta {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 16px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.news-card__meta span {
+  color: #b21f24;
+  font-weight: bold;
+}
+
+.news-card h3 {
+  margin: 0 0 24px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.news-card a {
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.news-card a:hover {
+  color: #b21f24;
+}
+
+@media (max-width: 768px) {
+  .news {
+    padding: 64px 0;
+  }
+
+  .news__list {
+    grid-template-columns: 1fr;
+  }
+}
