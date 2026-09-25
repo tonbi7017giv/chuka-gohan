@@ -116,6 +116,8 @@
 
   .news__list {
     grid-template-columns: 1fr;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -233,7 +235,8 @@
 
 .news-list__more{
   display: block;
-  text-align: right;
+  width: fit-content;
+  margin-left: auto;
   margin-top: 24px;
   font-size: 1.1rem;
   color: #222;

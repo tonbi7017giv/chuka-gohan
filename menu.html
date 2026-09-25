@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>おしながき | 中華 新龍</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <header class="header">
-    <a href="index.html" class="logo">中華 新龍</a>
+ <header class="header">
+    <div class="header__inner">
+      <a class="header__logo" href="index.html">
+        中華 <span>新龍</span>
+      </a>
 
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="menu.html">おしながき</a></li>
-        <li><a href="about.html">当店について</a></li>
-      </ul>
-    </nav>
+      <nav class="header__nav" aria-label="メインメニュー">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="about.html">当店について</a></li>
+        </ul>
+      </nav>
+
+      <a class="header__button" href="tel:0000000000">電話予約</a>
+    </div>
   </header>
 
   <main>
@@ -27,7 +33,7 @@
     </section>
 
     <section class="menu">
-      <!-- ここに料理カードを配置する -->
+      <img src="images/card-ramen.jpeg" alt="一番人気!!担々麺">
     </section>
   </main>
 
