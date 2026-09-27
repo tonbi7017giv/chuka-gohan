@@ -247,3 +247,14 @@
 .news-list__more:hover {
   color: #b21f24;
 }
+
+.footer__contact,
+.footer__instagram {
+  color: #222;
+  text-decoration: none;
+}
+
+.footer__contact:hover,
+.footer__instagram:hover {
+  color: #e3b34d;
+}
