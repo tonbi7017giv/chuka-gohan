@@ -27,13 +27,59 @@
   </header>
 
   <main>
-    <section class="page-title">
-      <p>MENU</p>
+    <section class="page-header">
       <h1>おしながき</h1>
     </section>
 
-    <section class="menu">
-      <img src="images/card-ramen.jpeg" alt="一番人気!!担々麺">
+    <nav class="menu-category-nav">
+        <ul>
+          <li><a href="#ramen">麺類</a></li>
+          <li><a href="#rice">ご飯もの</a></li>
+          <li><a href="#side">サイドメニュー</a></li>
+        </ul>
+      </nav>
+
+      <!--  メインメニュー（例：麺類） -->
+        <section id="ramen" class="menu-section">
+          <h2 class="menu-section__title">ラーメン</h2>
+
+    <div class="menu-grid">
+      <!-- メニューカード 1 -->
+       <article class="menu-item">
+        <div class="menu-item">
+          <div class="menu-item__image">
+            <img src="images/card-ramen.jpeg" alt="一番人気!!担々麺">
+          </div>
+          <div class="menu-item__content">
+            <div class="menu-item__header">
+              <h3 class="menu-item__name">刺激の担々麺</h3>
+              <span class="menu-item__price">890円</span>
+            </div>
+            <p class="menu-item__desc">
+                自家製ラー油と花椒の香りが引き立つ、当店一番人気の担々麺です。
+              </p>
+          </div>
+       </article>
+      
+          <!-- メニューカード 2 -->
+          <article class="menu-item">
+            <div class="menu-item__image">
+              <img src="images/card-shoronpo.jpeg" alt="小籠包" />
+            </div>
+            <div class="menu-item__content">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">肉汁溢れる小籠包</h3>
+                <!-- <span class="menu-item__price">780円</span>
+              </div>
+              <p class="menu-item__desc">
+                鶏ガラと豚骨ベースの澄んだスープ。飽きのこない定番の一杯。
+              </p> -->
+            </div>
+          </article>
+        </div>
+
+      </div>
+      
     </section>
 
     <section class="menu">

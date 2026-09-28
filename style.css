@@ -248,13 +248,62 @@
   color: #b21f24;
 }
 
-.footer__contact,
-.footer__instagram {
-  color: #222;
-  text-decoration: none;
+.footer{
+  padding:56px 0 24px;
+  background:#453f3e;
+  color: #fff;
 }
 
-.footer__contact:hover,
-.footer__instagram:hover {
+.footer__inner{
+  diisplay: flex;
+  align-items: center;
+  justyfy-content: space-between;
+  gap: 32px;
+
+  width: min(90%, 1100px);
+  margin: 0 auto;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: color 0.3s;
+}
+
+.footer__link:hover{
   color: #e3b34d;
+}
+
+.footer__instagram-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 600px) {
+  .footer__inner,
+  .footer__links {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer__inner {
+    gap: 40px;
+  }
 }
