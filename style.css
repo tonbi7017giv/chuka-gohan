@@ -307,3 +307,49 @@
     gap: 40px;
   }
 }
+
+/* ==========================================
+    メニューページ（menu.html）用スタイル
+   ========================================== */
+
+   .page-header{
+    padding:40px 0;
+    background: #b21f24;
+    color: #fff;
+    text-align: center;
+    }
+
+    .menu-category-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px;
+      list-style: none;
+      background: #fff;
+    }
+
+    .menu-category-nav a {
+      padding: 8px 16px;
+      background: #f7f3eb;
+      color: #222;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .menu-category-nav a:hover {
+      background: #b21f24;
+      color: #fff;
+    }
+
+    .menu-section{
+      width: min(90%, 1000px);
+      margin:60px auto;
+    }
+
+    .menu-section__title{
+      border-bottom: 2px solid #b21f24;
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+      font-size: 1.8rem;
+    }
