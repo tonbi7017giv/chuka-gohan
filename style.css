@@ -1,3 +1,7 @@
+/* ==========================================
+    トップページ（index.html）用スタイル
+   ========================================== */
+
 .hero {
  position: relative;
   width: min(90%); 
@@ -352,4 +356,83 @@
       padding-bottom: 8px;
       margin-bottom: 32px;
       font-size: 1.8rem;
+    }
+
+    /*  メニューの2列レイアウト（Grid） */
+
+    .menu-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .menu-item{
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-item__image{
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .menu-item__image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .menu-item__content{
+      flex: 1;
+    }
+
+    .menu-item__header{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .menu-item__name{
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .menu-item__price{
+      color: #b21f24;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .menu-item__desc{
+      margin: 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* スマホ表示（画面幅768px以下）調整 */
+    @media(max-width: 768px){
+      .menu-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item{
+        flex-direction: column;
+      }
+
+      .menu-item__image{
+        width: 100%;
+        height: 180px;
+      }
     }
