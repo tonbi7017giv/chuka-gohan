@@ -35,7 +35,7 @@
         <div class="contact-inner">
 
             <div class="contact-lead">
-                <h2>お問い合わせ</h2>
+
                 <p class="contact-lead__thanks">中華 新龍へのご連絡をお待ちしております</p>
                 <p class="contact-lead__note">
                     お問い合わせのご返信には、多少お時間を頂く場合がございます。<br>
@@ -43,5 +43,104 @@
                 </p>
                 <p class="contact-lead__required">(<span>※</span>マークは必須です)</p>
             </div>
+
+            <form action="#" method="post" class="contact-form">
+
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        お名前<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <input type="text" id="name" name="name" required placeholder="例：田中 一郎">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        メールアドレス<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <input type="email" id="email" name="email" required placeholder="example@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_confirm" class="form-label">
+                        メールアドレス確認<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <input type="email" id="email_confirm" name="email_confirm" required placeholder="確認のためもう一度ご入力ください">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel" class="form-label">
+                        電話番号<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <input type="tel" id="tel" name="tel" required placeholder="090-0000-0000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category" class="form-label">
+                        カテゴリ<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <select id="category" name="category" required>
+                            <option value="">選択してください</option>
+                            <option value="ご予約について">ご予約について</option>
+                            <option value="ご宴会・貸切について">ご宴会・貸切について</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="file" class="form-label">ファイル選択</label>
+                    <div class="form-control">
+                        <input type="file" id="file" name="file">
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label for="message" class="form-label">
+                        お問い合わせ内容<span class="required">※</span>
+                    </label>
+                    <div class="form-control">
+                        <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+                    </div>
+                </div>
+
+                 <div class="form-submit">
+                    <button type="submit" class="submit-button">
+                        入力内容を送信する <span>&rarr;</span>
+                    </button>
+                    <p class="submit-note">
+                        ※ご入力いただいた連絡先へ、担当者からご連絡させていただくことがありますので、ご了承ください。
+                    </p>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a class="footer__link" href="contact.html">お問い合わせ</a>
+        <a class="footer__link footer__instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <svg class="footer__instagram-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+      <small class="footer__copyright">&copy; 2026 中華 新龍</small>
+    </div>
+  </footer>
+
+  </body>
+</html>
