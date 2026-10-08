@@ -19,38 +19,42 @@
   height: 100%;
 }
 
-.hero__video{
+.hero__video {
   object-fit: cover;
   z-index: 1;
 }
 
-.hero__image-wrapper{
+.hero__image-wrapper {
   z-index: 2;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.hero__image{
+.hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(1);
 }
 
-.hero.is-finished .hero__image-wrapper{
+.hero.is-finished .hero__image-wrapper {
   opacity: 1;
 }
 
-.hero.is-finished .hero__image{
+.hero.is-finished .hero__image {
   animation: zoomIn 8s ease-out forwards;
 }
 
-@keyframes zoomIn{
-  0%{ transform: scale(1.1); }
-  100%{ transform: scale(1); }
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.hero__curtain{
+.hero__curtain {
   position: absolute;
   inset: 0;
   background-color: #b21f24;
@@ -59,15 +63,23 @@
   pointer-events: none;
 }
 
-.hero.is-transitioning .hero__curtain{
+.hero.is-transitioning .hero__curtain {
   animation: curtainSlide 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
-@keyframes curtainSlide{
- 0% { transform: translateY(-100%); }
- 40% { transform: translateY(0%); }   /* 40%〜60%の間で画面を完全に覆う */
- 60% { transform: translateY(0%); }
- 100% { transform: translateY(100%); } /* 下へ抜ける */
+@keyframes curtainSlide {
+  0% {
+    transform: translateY(-100%);
+  }
+  40% {
+    transform: translateY(0%);
+  } /* 40%〜60%の間で画面を完全に覆う */
+  60% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  } /* 下へ抜ける */
 }
 
 .hero__content {
@@ -81,15 +93,17 @@
   color: #fff;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease 0.4s, transform 1s ease 0.4s;
+  transition:
+    opacity 1s ease 0.4s,
+    transform 1s ease 0.4s;
 }
 
-.hero.is-finished .hero__content{
+.hero.is-finished .hero__content {
   opacity: 1;
   transform: translateY(0);
 }
 
-.hero__sub{
+.hero__sub {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 12px;
@@ -99,7 +113,7 @@
 .hero__title {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: bold;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .news {
@@ -167,7 +181,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-   transition: transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .news-card:hover .news-card__image {
@@ -180,24 +194,29 @@
 
 @media (max-width: 768px) {
   .news {
-    padding: 64px 0;
+    padding: 40px 0;
   }
 
   .news__list {
-    grid-template-columns: 1fr;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .news-list__more{
+    margin: 20px auto 0;
+    text-align: center;
   }
 }
 
-.access{
+.access {
   padding: 100px 0;
   background: #f7f3eb;
 }
 
 .access__inner {
   display: grid;
-   grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
   width: min(90%, 1100px);
@@ -246,7 +265,7 @@
   }
 }
 
-.header{
+.header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -262,21 +281,21 @@
 
   width: min(90%, 1200px);
   min-height: 80px;
-  margin: 0 auto;
 }
 
-.header__logo{
+.header__logo {
   color: #222;
   font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap; /* 折り返しを防止 */
 }
 
-.header__logo span{
+.header__logo span {
   color: #b21f24;
 }
 
-.header__nav ul{
+.header__nav ul {
   display: flex;
   gap: 28px;
   margin: 0;
@@ -294,15 +313,16 @@
   color: #b21f24;
 }
 
-.header__button{
-  padding:12px 18px;
+.header__button {
+  padding: 12px 18px;
   background: #b21f24;
   color: #fff;
   font-weight: bold;
   text-decoration: none;
+  font-size: 1rem;
 }
 
-.news-list__more{
+.news-list__more {
   display: block;
   width: fit-content;
   margin-left: auto;
@@ -317,16 +337,16 @@
   color: #b21f24;
 }
 
-.footer{
-  padding:56px 0 24px;
-  background:#453f3e;
+.footer {
+  padding: 56px 0 24px;
+  background: #453f3e;
   color: #fff;
 }
 
-.footer__inner{
-  diisplay: flex;
+.footer__inner {
+  display: flex;
   align-items: center;
-  justyfy-content: space-between;
+  justify-content: space-between;
   gap: 32px;
 
   width: min(90%, 1100px);
@@ -351,7 +371,7 @@
   transition: color 0.3s;
 }
 
-.footer__link:hover{
+.footer__link:hover {
   color: #e3b34d;
 }
 
@@ -365,7 +385,301 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 600px) {
+/* ==========================================
+    メニューページ（menu.html）用スタイル
+   ========================================== */
+
+.page-header {
+  padding: 40px 0;
+  background: #b21f24;
+  color: #fff;
+  text-align: center;
+}
+
+.menu-category-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  list-style: none;
+  background: #fff;
+}
+
+.menu-category-nav a {
+  padding: 8px 16px;
+  background: #f7f3eb;
+  color: #222;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.menu-category-nav a:hover {
+  background: #b21f24;
+  color: #fff;
+}
+
+.menu-section {
+  width: min(90%, 1000px);
+  margin: 60px auto;
+}
+
+.menu-section__title {
+  border-bottom: 2px solid #b21f24;
+  padding-bottom: 8px;
+  margin-bottom: 32px;
+  font-size: 1.8rem;
+}
+
+/*  メニューの2列レイアウト（Grid） */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item__image {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.menu-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.menu-item__content {
+  flex: 1;
+}
+
+.menu-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.menu-item__name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.menu-item__price {
+  color: #b21f24;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.menu-item__desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+/* ==========================================
+    お問い合わせページ（contact.html）用スタイル
+   ========================================== */
+
+.contact-section {
+  padding: 60px 0 100px;
+  background-color: #f7f3eb;
+}
+
+.contact-inner {
+  width: min(90%, 800px);
+  margin: 0 auto;
+}
+
+.contact-lead {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-lead h2 {
+  font-size: 1.2rem;
+  color: #b21f24;
+  margin-bottom: 12px;
+}
+
+.contact-lead__thanks {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b21f24;
+  margin-bottom: 24px;
+}
+
+.contact-lead__note {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.contact-lead__required {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.contact-lead__required span,
+.required {
+  color: #b21f24;
+  margin-left: 2px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-label {
+  width: 240px;
+  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #222;
+  padding-right: 16px;
+}
+
+.form-control {
+  flex: 1;
+}
+
+.form-control input[type="text"],
+.form-control input[type="email"],
+.form-control input[type="tel"],
+.form-control select,
+.form-control textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+  border-color: #b21f24;
+}
+
+.form-control input[type="file"] {
+  font-size: 0.9rem;
+}
+
+.form-submit {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 400px);
+  padding: 16px 24px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.submit-button:hover {
+  opacity: 0.85;
+}
+
+.submit-note {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #b21f24;
+}
+
+@media (max-width: 768px) {
+  .contact-lead__thanks {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .form-label {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .header__inner {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    min-height: auto;
+    gap: 10px 0;
+  }
+
+  .header__nav {
+    order: 3;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+  }
+
+  .header__nav ul {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .header__nav a {
+    font-size: 0.85rem;
+  }
+
+  .header__logo {
+    font-size: 1.2rem;
+  }
+
+  .header__button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
   .footer__inner,
   .footer__links {
     align-items: flex-start;
@@ -375,283 +689,17 @@
   .footer__inner {
     gap: 40px;
   }
-}
 
-/* ==========================================
-    メニューページ（menu.html）用スタイル
-   ========================================== */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 
-   .page-header{
-    padding:40px 0;
-    background: #b21f24;
-    color: #fff;
-    text-align: center;
-    }
-
-    .menu-category-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      padding: 20px;
-      list-style: none;
-      background: #fff;
-    }
-
-    .menu-category-nav a {
-      padding: 8px 16px;
-      background: #f7f3eb;
-      color: #222;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: bold;
-    }
-
-    .menu-category-nav a:hover {
-      background: #b21f24;
-      color: #fff;
-    }
-
-    .menu-section{
-      width: min(90%, 1000px);
-      margin:60px auto;
-    }
-
-    .menu-section__title{
-      border-bottom: 2px solid #b21f24;
-      padding-bottom: 8px;
-      margin-bottom: 32px;
-      font-size: 1.8rem;
-    }
-
-    /*  メニューの2列レイアウト（Grid） */
-
-    .menu-grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .menu-item{
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      background: #fff;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .menu-item__image{
-      width: 150px;
-      height: 150px;
-      flex-shrink: 0;
-      overflow: hidden;
-      border-radius: 6px;
-    }
-
-    .menu-item__image img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-
-    .menu-item__content{
-      flex: 1;
-    }
-
-    .menu-item__header{
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px dashed #ccc;
-      padding-bottom: 6px;
-      margin-bottom: 8px;
-    }
-
-    .menu-item__name{
-      margin: 0;
-      font-size: 1.1rem;
-    }
-
-    .menu-item__price{
-      color: #b21f24;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .menu-item__desc{
-      margin: 0;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    /* スマホ表示（画面幅768px以下）調整 */
-    @media(max-width: 768px){
-      .menu-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .menu-item{
-        flex-direction: column;
-      }
-
-      .menu-item__image{
-        width: 100%;
-        height: 180px;
-      }
-    }
-
-    /* ==========================================
-    お問い合わせページ（contact.html）用スタイル
-   ========================================== */
-
-   .contact-section{
-    padding: 60px 0 100px;
-    background-color: #f7f3eb;
-   }
-
-   .contact-inner{
-    width: min(90%, 800px);
-    margin: 0 auto;
-   }
-
-   .contact-lead{
-    text-align: center;
-    margin-bottom: 48px;
-   }
-
-   .contact-lead h2{
-    font-size: 1.2rem;
-    color: #b21f24;
-    margin-bottom: 12px;
-   }
-
-   .contact-lead__thanks{
-    font-size: 2rem;
-    font-weight: bold;
-    color: #b21f24;
-    margin-bottom: 24px;
-   }
-
-   .contact-lead__note{
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 16px;
-   }
-
-   .contact-lead__required{
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #555;
-   }
-
-   .contact-lead__required span,
-   .required{
-    color: #b21f24;
-    margin-left: 2px;
-   }
-
-   .contact-form{
-    display: flex;
+  .menu-item {
     flex-direction: column;
-    gap: 20px;
-   }
+  }
 
-   .form-group{
-    display: flex;
-    align-items: center;
-   }
-
-   .form-label{
-    width: 240px;
-    flex-shrink: 0;
-    font-weight: bold;
-    font-size: 0.95rem;
-    color: #222;
-    padding-right: 16px;
-   }
-
-   .form-control{
-    flex: 1;
-   }
-
-   .form-control input[type="text"],
-   .form-control input[type="email"],
-   .form-control input[type="tel"],
-   .form-control select,
-   .form-control textarea{
+  .menu-item__image {
     width: 100%;
-    padding: 12px 16px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.2s;
-   }
-
-   .form-control input:focus,
-   .form-control select:focus,
-   .form-control textarea:focus{
-    border-color: #b21f24;
-   }
-
-   .form-control input[type="file"]{
-    font-size: 0.9rem;
-   }
-
-   .form-submit{
-    margin-top: 32px;
-    text-align: center;
-   }
-
-   .submit-button{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: min(100%, 400px);
-    padding: 16px 24px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: opacity 0.3s;
-   }
-
-   .submit-button:hover{
-    opacity: 0.85;
-   }
-
-   .submit-note {
-    margin-top: 16px;
-    font-size: 0.8rem;
-    color: #b21f24;
-   }
-  
-   @media(max-width: 768px){
-    .contact-lead__thanks{
-      font-size: 1.5rem;
-    }
-
-    .form-group{
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .form-label{
-      width: 100%;
-      padding-right: 0;
-    }
-
-    .form-control{
-      width: 100%;
-    }
-   }
+    height: 180px;
+  }
+}
